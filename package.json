@@ -1,0 +1,17 @@
+{
+  "name": "miotomo-www",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miotomo-edu/www.git"
+  },
+  "devDependencies": {
+    "vite": "^8.0.16"
+  }
+}
