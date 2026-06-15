@@ -1,0 +1,316 @@
+/* ============================================================
+   MIOTOMO WEB — COMPONENTS
+   Reusable marketing-site primitives built on web-tokens.css.
+   These are the dark, cinematic, serif-voiced counterparts to
+   the in-app components (components.css). Class-based, no JS.
+============================================================ */
+
+/* ---------- Eyebrow (mono, uppercase, tracked) ---------- */
+.w-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--t-eyebrow);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 500;
+}
+
+/* ---------- Brand wordmark + dot glyph ---------- */
+.w-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-brand);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--ink);
+}
+.w-brand-dot {
+    width: 26px;
+    height: 26px;
+    background: var(--green);
+    /* the soft, slightly-organic blob — never a perfect circle */
+    border-radius: 50% 50% 48% 52% / 55% 55% 45% 45%;
+    position: relative;
+    flex: 0 0 auto;
+}
+.w-brand-dot::before {
+    content: "";
+    position: absolute;
+    inset: 5px 4px auto 4px;
+    height: 10px;
+    background: var(--paper);
+    border-radius: 50%;
+}
+
+/* ---------- Buttons ---------- */
+.w-btn {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 12px 22px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: transform var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+/* Primary = ochre. The single most important action color. */
+.w-btn--primary { background: var(--ochre); color: #2a2620; }
+.w-btn--primary:hover { transform: translateY(-1px); }
+/* Inverse = cream pill (used in the nav once scrolled) */
+.w-btn--inverse {
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 18px;
+}
+.w-btn--inverse:hover { background: var(--ochre); border-color: var(--ochre); }
+/* Ghost = hairline outline on dark */
+.w-btn--ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+}
+.w-btn--ghost:hover { border-color: var(--ink); }
+
+/* ---------- Waitlist form (pill input group) ---------- */
+.w-form {
+    display: flex;
+    gap: 8px;
+    max-width: 520px;
+    background: var(--paper-2);
+    padding: 8px;
+    border-radius: var(--radius-pill);
+    border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+}
+.w-form input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px 18px;
+    font: inherit;
+    color: var(--ink);
+    outline: none;
+}
+.w-form input::placeholder { color: var(--ink-mute); }
+.w-form button {
+    border: none;
+    background: var(--ochre);
+    color: #2a2620;
+    font: inherit;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: transform var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.w-form button:hover { transform: translateY(-1px); }
+
+/* ---------- Scene tag (number pill + label) ---------- */
+.w-scene-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+}
+.w-scene-tag .pill {
+    padding: 4px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--ochre);
+    color: #2a2620;
+    letter-spacing: 0.18em;
+}
+
+/* ---------- Scene card (image + copy, alternating) ---------- */
+.w-scene {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--paper-2);
+    border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+}
+.w-scene__art { position: relative; overflow: hidden; }
+.w-scene__art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+}
+.w-scene__text {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+.w-scene__text h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(28px, 2.8vw, 44px);
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    margin: 0;
+    color: var(--ink);
+}
+.w-scene__text p {
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0;
+}
+
+/* ---------- Skill card (numbered feature tile) ---------- */
+.w-skill {
+    background: var(--paper);
+    border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+    border-radius: var(--radius);
+    padding: 28px;
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.w-skill .num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.2em;
+}
+.w-skill h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin: 4px 0 0;
+    color: var(--ink);
+}
+.w-skill p { color: var(--ink-soft); max-width: 42ch; margin: 0; }
+
+/* ---------- Safety / definition list (hairline rows) ---------- */
+.w-deflist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.w-deflist li {
+    padding: 18px 0;
+    border-top: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
+}
+.w-deflist li:last-child {
+    border-bottom: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
+}
+.w-deflist h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+    color: var(--ink);
+}
+.w-deflist p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0;
+}
+
+/* ---------- Ticker / meta row (mono, coral pips) ---------- */
+.w-ticker {
+    padding: 22px 0;
+    border-top: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
+    border-bottom: 1px solid color-mix(in oklab, var(--ink) 14%, transparent);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 48px;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+}
+.w-ticker span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.w-ticker span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+    flex: 0 0 8px;
+}
+
+/* ---------- Video / media frame (cinematic placeholder) ---------- */
+.w-video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background:
+        radial-gradient(120% 80% at 50% 0%,
+            color-mix(in oklab, var(--navy) 80%, transparent), transparent 60%),
+        var(--navy);
+    border: 1px solid color-mix(in oklab, var(--ink) 20%, transparent);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    place-items: center;
+    color: var(--paper);
+}
+.w-video__play {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: var(--paper);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.4);
+}
+.w-video__play::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 24px solid var(--ink);
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    margin-left: 6px;
+}
+
+/* ---------- Floating-copy treatment (over full-bleed art) ---------- */
+.w-float-copy {
+    text-shadow: var(--text-float);
+}
+
+/* ---------- Scroll reveal (entrance) ---------- */
+.w-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity var(--dur-reveal) var(--ease),
+        transform var(--dur-reveal) var(--ease);
+}
+.w-reveal.in { opacity: 1; transform: translateY(0); }

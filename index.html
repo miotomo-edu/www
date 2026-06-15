@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+            Miotomo, A voice-first AI companion that learns from your child
+        </title>
+        <meta
+            name="description"
+            content="Miotomo is a voice-first AI learning companion for kids 7–12. Children listen to an episode, then teach what they learned to Tomo, building critical thinking, storytelling, and verbal confidence."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="landing.css" />
+    </head>
+    <body data-screen-label="Miotomo Landing">
+        <!-- ============================================================
+     NAV
+============================================================ -->
+        <nav class="nav">
+            <div class="wrap nav-inner">
+                <a href="#top" class="brand">
+                    <span class="brand-dot" aria-hidden="true"></span>
+                    <span>MioTomo</span>
+                </a>
+                <a href="#waitlist" class="nav-cta">Join the waitlist</a>
+            </div>
+        </nav>
+
+        <!-- ============================================================
+     HERO
+============================================================ -->
+        <section class="hero" id="top">
+            <div class="hero-pin">
+                <img
+                    class="hero-bg"
+                    src="assets/tomo-flying-bg.png"
+                    alt="Tomo flying through space with a rocket trail, past the moon and Earth"
+                />
+                <img
+                    class="hero-tomo"
+                    src="assets/tomo-flying-solo.png"
+                    alt=""
+                    aria-hidden="true"
+                />
+                <div class="wrap">
+                    <div class="hero-grid">
+                        <div class="hero-copy">
+                            <h1
+                                class="reveal delay-1"
+                                style="
+                                    margin-top: 20px;
+                                    color: rgb(240, 230, 207);
+                                "
+                            >
+                                Teach Tomo<br />about Earth
+                            </h1>
+                            <p
+                                class="hero-lede reveal delay-2"
+                                style="
+                                    font-family: 'Nunito Sans';
+                                    text-shadow: none;
+                                    font-size: 18px;
+                                "
+                            >
+                                A voice AI-first adventure where curious
+                                children aged 6-12 years  teach an alien about
+                                Earth, building critical thinking and spoken
+                                confidence.
+                            </p>
+
+                            <div
+                                class="eyebrow reveal delay-3"
+                                style="
+                                    margin-top: 32px;
+                                    color: rgb(240, 230, 207);
+                                "
+                            ></div>
+
+                            <div
+                                class="hero-form-wrap reveal delay-3"
+                                style="margin-top: clamp(48px, 9vh, 96px)"
+                            >
+                                <form
+                                    class="hero-form"
+                                    data-waitlist
+                                    data-source="hero"
+                                    data-success="hero-success"
+                                    autocomplete="off"
+                                >
+                                    <input
+                                        type="email"
+                                        required
+                                        placeholder="parent@email.com"
+                                        aria-label="Email address"
+                                    />
+                                    <button
+                                        type="submit"
+                                        style="
+                                            background-color: rgb(182, 195, 86);
+                                        "
+                                    >
+                                        Join the waitlist
+                                    </button>
+                                </form>
+                                <div
+                                    class="hero-microcopy"
+                                    id="hero-success-line"
+                                ></div>
+                                <div
+                                    class="cta-success"
+                                    id="hero-success"
+                                    style="
+                                        color: var(--green-deep);
+                                        margin-top: 18px;
+                                    "
+                                >
+                                    You're on the list. We'll be in touch.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+     STORY, Tomo travels through scenes
+============================================================ -->
+        <section class="story">
+            <div class="wrap" style="border-style: solid; border-width: 0px">
+                <div class="story-intro">
+                    <div
+                        class="story-art story-art--full reveal"
+                        data-parallax="0.04"
+                    >
+                        <img
+                            src="assets/tomo-meet.png"
+                            alt="Tomo flying through space past Earth and the Moon, with a rocket trail behind him"
+                        />
+                    </div>
+                    <div class="story-text">
+                        <div class="eyebrow reveal">Meet Tomo</div>
+                        <h2
+                            class="reveal delay-1"
+                            style="margin-top: 24px; color: rgb(240, 230, 207)"
+                        >
+                            Tomo is from a planet called  Motara
+                        </h2>
+                        <p class="lede reveal delay-2" style="margin-top: 28px">
+                            Tomo is a Keeper of Knowledge, curious about Earth
+                            and entirely dependent on your child to make sense
+                            of it.
+                        </p>
+                        <ul
+                            class="safety-list reveal delay-2"
+                            style="margin-top: 20px"
+                        >
+                            <li style="border-width: 1px 0px">
+                                <h4>He arrives knowing nothing</h4>
+                                <p>
+                                    He does not know much about Earth yet, but
+                                    he notices everything and asks wonderfully
+                                    odd questions.
+                                </p>
+                            </li>
+                            <li style="border-width: 1px 0px 0px">
+                                <h4>He only learns from your child</h4>
+                                <p>
+                                    If your child can't say it out loud, Tomo
+                                    can't know it. So your child helps Tomo
+                                    learn.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ============================================================
+     SKILLS
+============================================================ -->
+                <section class="skills">
+                    <div class="wrap">
+                        <div class="skills-head reveal">
+                            <div class="eyebrow">What it builds</div>
+                            <h2
+                                style="
+                                    margin-top: 24px;
+                                    color: rgb(240, 230, 207);
+                                "
+                            >
+                                Six skills, built through meaningful
+                                conversations
+                            </h2>
+                        </div>
+
+                        <div class="skills-grid">
+                            <div class="skill reveal">
+                                <div>
+                                    <div class="num">01</div>
+                                    <h3>Critical thinking</h3>
+                                </div>
+                                <p>
+                                    Inference, cause and effect, weighing
+                                    claims. Built turn by turn through questions
+                                    that don't have one right answer.
+                                </p>
+                            </div>
+
+                            <div class="skill reveal delay-1">
+                                <div>
+                                    <div class="num">02</div>
+                                    <h3>Storytelling</h3>
+                                </div>
+                                <p>
+                                    Retell what happened, fill in the gaps,
+                                    build a narrative. Tomo asks for the version
+                                    only your child can tell.
+                                </p>
+                            </div>
+
+                            <div class="skill reveal delay-2">
+                                <div>
+                                    <div class="num">03</div>
+                                    <h3>Debating</h3>
+                                </div>
+                                <p>
+                                    Take a position. Defend it. Notice when
+                                    someone changes your mind. We practice it
+                                    like a sport, in low stakes.
+                                </p>
+                            </div>
+
+                            <div class="skill reveal">
+                                <div>
+                                    <div class="num">04</div>
+                                    <h3>Public speaking</h3>
+                                </div>
+                                <p>
+                                    Talking out loud, not into a chat box.
+                                    Voice-first means fluency, turn-taking, and
+                                    confidence at the level of the spoken word.
+                                </p>
+                            </div>
+
+                            <div class="skill reveal delay-1">
+                                <div>
+                                    <div class="num">05</div>
+                                    <h3>English proficiency</h3>
+                                </div>
+                                <p>
+                                    Vocabulary, sentence structure, and
+                                    pronunciation, picked up the way fluent
+                                    speakers really learn them: in the middle of
+                                    a real conversation.
+                                </p>
+                            </div>
+
+                            <div class="skill reveal delay-2">
+                                <div>
+                                    <div class="num">06</div>
+                                    <h3>Diplomacy</h3>
+                                </div>
+                                <p>
+                                    Hear the other side, find common ground, and
+                                    talk it out. When characters disagree, your
+                                    child plays mediator and learns to bring
+                                    them back together.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================================================
+     VIDEO SHOWCASE
+============================================================ -->
+                <section class="video-block">
+                    <div class="wrap">
+                        <div class="video-head reveal">
+                            <h2>Watch a curious child in conversation.</h2>
+                            <p class="lede"></p>
+                        </div>
+
+                        <div class="video-frame reveal">
+                            <!-- Drop in <video src="..."></video> when ready. Replace the placeholder div. -->
+                            <div class="placeholder">
+                                <div class="play" aria-hidden="true"></div>
+                                <div>
+                                    <div
+                                        class="ph-title"
+                                        style="color: rgb(203, 200, 216)"
+                                    >
+                                        Video coming soon
+                                    </div>
+                                    <div
+                                        class="ph-sub"
+                                        style="
+                                            margin-top: 10px;
+                                            color: rgb(201, 196, 216);
+                                        "
+                                    >
+                                        16:9 · A real session, lightly edited
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-caption">
+                            <span> </span>
+                            <span> </span>
+                        </div>
+                    </div>
+                </section>
+                <div class="scenes">
+                    <!-- Scene 1, Classroom: how the child becomes the teacher -->
+                    <article class="scene reveal">
+                        <div class="scene-art scene-art--full">
+                            <img
+                                src="assets/role-reversal.png"
+                                alt="A child sitting on a sofa, smiling and talking to Tomo on a tablet screen"
+                                style="object-fit: cover"
+                            />
+                        </div>
+                        <div class="scene-text">
+                            <div class="scene-tag">
+                                <span class="pill">01</span> The role reversal
+                            </div>
+                            <h3>
+                                Your child is the expert.<br />Tomo is the
+                                student.
+                            </h3>
+                            <p>
+                                Most learning apps quiz children. Miotomo flips
+                                it.  Tomo doesn't know what a volcano is, or who
+                                Julius Caesar was, or why ice floats. He needs
+                                your child to tell him. This makes children take
+                                charge and they stop performing for a test and
+                                start thinking critically.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Scene 2, Rome: topic-native characters -->
+                    <article class="scene reverse reveal">
+                        <div class="scene-art">
+                            <img
+                                src="assets/scene-egypt.png"
+                                alt="A Roman senator and a Roman soldier in conversation"
+                            />
+                        </div>
+                        <div class="scene-text">
+                            <div class="scene-tag">
+                                <span class="pill">02</span> Topic-native
+                                characters
+                            </div>
+                            <h3>
+                                Conversations with the AI presenters inside the
+                                subject.
+                            </h3>
+                            <p>
+                                Every topic is hosted by characters who belong
+                                to it. Ancient Rome arrives as a senator and a
+                                soldier, both ready to argue. Dinosaurs show up
+                                as a T-Rex who remembers being one. Your child
+                                isn't told about the world, they're dropped into
+                                it.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Scene 3, Arctic: every topic is a journey -->
+                    <article class="scene reveal">
+                        <div class="scene-art">
+                            <img
+                                src="assets/scene-arctic.png"
+                                alt="Tomo standing in front of the pyramids of Giza at night"
+                            />
+                        </div>
+                        <div class="scene-text">
+                            <div class="scene-tag">
+                                <span class="pill">03</span> The Circle
+                            </div>
+                            <h3>Every topic is a<br />five-episode journey.</h3>
+                            <p>
+                                A Circle is five 15-minute Dots. Each Dot is a
+                                story, a conversation, and a piece of a badge.
+                                Together they build to Teachtime, the moment
+                                your child sits down and teaches Tomo everything
+                                they've learned. It's a series, not a worksheet.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Scene 4, Egypt: wonder -->
+                    <article class="scene reverse reveal">
+                        <div class="scene-art">
+                            <img
+                                src="assets/scene-space.png"
+                                alt="Tomo sitting on an arctic ice floe under the aurora"
+                            />
+                        </div>
+                        <div class="scene-text">
+                            <div class="scene-tag">
+                                <span class="pill">04</span> Made to be loved
+                            </div>
+                            <h3>Built by parents, for curious children </h3>
+                            <ul class="safety-list">
+                                <li>
+                                    <h4>Well designed topics</h4>
+                                    <p>
+                                        Written, illustrated, and voice-acted to
+                                        earn your child's attention.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>Kids come back on their own</h4>
+                                    <p>
+                                        They want to know what happens next, and
+                                        because Miotomo gives them space to
+                                        think, speak, and explore ideas.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>A window in for parents</h4>
+                                    <p>
+                                        A parent dashboard shows real progress,
+                                        what your child argued, retold, and
+                                        learned to say out loud.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Scene 5, Space: imagination -->
+                    <article class="scene reveal">
+                        <div class="scene-art">
+                            <img
+                                src="assets/scene-classroom.png"
+                                alt="Tomo raising his hand in a bright classroom"
+                            />
+                        </div>
+                        <div class="scene-text">
+                            <div class="scene-tag">
+                                <span class="pill">05</span> Safety &amp;
+                                privacy
+                            </div>
+                            <h3>
+                                Built to be trusted<br />with your child's
+                                voice.
+                            </h3>
+                            <ul class="safety-list">
+                                <li>
+                                    <h4>A strict safety layer</h4>
+                                    <p>
+                                        Every spoken turn passes a deterministic
+                                        filter before the AI sees it. Unsafe
+                                        content is blocked, not interpreted.
+                                        Distress signals route to a
+                                        trusted-adult message.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>No human-mimicry</h4>
+                                    <p>
+                                        Tomo is a friendly alien, not a person.
+                                        We deliberately avoid characters that
+                                        ask kids to form an emotional bond with
+                                        something that isn't real.
+                                    </p>
+                                </li>
+                                <li>
+                                    <h4>Zero data retention</h4>
+                                    <p>
+                                        We don't sell, share, or train models on
+                                        your child's voice. Conversation
+                                        transcripts exist only long enough to
+                                        show you progress, then they're gone,
+                                        encrypted in transit, deleted on a
+                                        schedule, never used to improve anyone
+                                        else's product.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+     CTA, Final waitlist
+============================================================ -->
+        <section class="cta" id="waitlist">
+            <div class="wrap">
+                <div
+                    class="eyebrow reveal"
+                    style="
+                        color: color-mix(
+                            in oklab,
+                            var(--paper) 60%,
+                            transparent
+                        );
+                    "
+                >
+                    Closed beta · Fall 2026
+                </div>
+                <h2 class="reveal delay-1" style="margin-top: 24px">
+                    Get your child<br />on the
+                    <em style="color: rgb(182, 195, 86)">list</em>
+                </h2>
+                <p class="cta-lede reveal delay-2">
+                    We're opening Miotomo to a small group of families this
+                    fall. Drop your email and we'll send one note when invites
+                    go out. That's the whole arrangement.
+                </p>
+
+                <form
+                    class="cta-form reveal delay-2"
+                    data-waitlist
+                    data-source="cta"
+                    data-success="cta-success"
+                    autocomplete="off"
+                >
+                    <input
+                        type="email"
+                        required
+                        placeholder="parent@email.com"
+                        aria-label="Email address"
+                    />
+                    <button
+                        type="submit"
+                        style="
+                            background-color: rgb(182, 195, 86);
+                            color: rgb(17, 17, 17);
+                        "
+                    >
+                        Join the waitlist
+                    </button>
+                </form>
+                <div class="cta-micro reveal delay-3">
+                    No spam. No share. No newsletter. One email.
+                </div>
+                <div class="cta-success" id="cta-success">
+                    ✓ You're in. We'll be in touch.
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+     FOOTER
+============================================================ -->
+        <footer class="footer">
+            <div class="wrap footer-inner">
+                <div class="left">
+                    <span
+                        class="brand-dot"
+                        aria-hidden="true"
+                        style="width: 18px; height: 18px"
+                    ></span>
+                    <span
+                        style="
+                            font-family: 'Satoshi', 'Nunito Sans', sans-serif;
+                            font-weight: 700;
+                            font-size: 17px;
+                            letter-spacing: -0.02em;
+                        "
+                        >Miotomo</span
+                    >
+                    <span style="margin-left: 18px">© 2026</span>
+                </div>
+                <div
+                    style="
+                        font-family: var(--font-mono);
+                        letter-spacing: 0.16em;
+                        text-transform: uppercase;
+                        font-size: 11px;
+                    "
+                >
+                    DESIGNED BY PARENTS, MADE FOR KIDS 7–12
+                </div>
+            </div>
+        </footer>
+
+        <!-- Tweaks panel (vanilla, very small) -->
+        <div
+            id="tweaks-panel"
+            style="
+                display: none;
+                position: fixed;
+                right: 18px;
+                bottom: 18px;
+                z-index: 100;
+                background: var(--paper);
+                color: var(--ink);
+                border: 1px solid
+                    color-mix(in oklab, var(--ink) 20%, transparent);
+                border-radius: 16px;
+                padding: 18px;
+                width: 260px;
+                box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.3);
+                font-family: var(--font-body);
+                font-size: 14px;
+            "
+        >
+            <div
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 12px;
+                "
+            >
+                <strong
+                    style="
+                        font-family: var(--font-display);
+                        font-size: 17px;
+                        font-weight: 500;
+                    "
+                    >Tweaks</strong
+                >
+                <button
+                    id="tweaks-close"
+                    style="
+                        background: none;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 18px;
+                        color: var(--ink-mute);
+                    "
+                >
+                    ×
+                </button>
+            </div>
+            <label
+                style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 8px 0;
+                "
+            >
+                Parallax
+                <input id="tw-parallax" type="checkbox" checked />
+            </label>
+            <label style="display: block; padding: 8px 0">
+                Accent
+                <select
+                    id="tw-accent"
+                    style="
+                        display: block;
+                        margin-top: 6px;
+                        width: 100%;
+                        padding: 8px;
+                        border-radius: 8px;
+                        border: 1px solid
+                            color-mix(in oklab, var(--ink) 20%, transparent);
+                        background: var(--paper-2);
+                        font: inherit;
+                    "
+                >
+                    <option value="ochre">Ochre (default)</option>
+                    <option value="coral">Coral</option>
+                    <option value="terracotta">Terracotta</option>
+                    <option value="sky">Sky blue</option>
+                </select>
+            </label>
+            <label style="display: block; padding: 8px 0">
+                Paper tone
+                <select
+                    id="tw-paper"
+                    style="
+                        display: block;
+                        margin-top: 6px;
+                        width: 100%;
+                        padding: 8px;
+                        border-radius: 8px;
+                        border: 1px solid
+                            color-mix(in oklab, var(--ink) 20%, transparent);
+                        background: var(--paper-2);
+                        font: inherit;
+                    "
+                >
+                    <option value="cream">Cream (default)</option>
+                    <option value="warm">Warm sand</option>
+                    <option value="cool">Cool stone</option>
+                </select>
+            </label>
+        </div>
+
+        <script type="module" src="script.js"></script>
+        <script>
+            /* Tweaks panel wiring (vanilla, no React needed) */
+            (function () {
+                const panel = document.getElementById('tweaks-panel');
+                const closeBtn = document.getElementById('tweaks-close');
+                const parallaxToggle = document.getElementById('tw-parallax');
+                const accentSel = document.getElementById('tw-accent');
+                const paperSel = document.getElementById('tw-paper');
+
+                function setAccent(name) {
+                    const map = {
+                        ochre: '#d9a83c',
+                        coral: '#d9836a',
+                        terracotta: '#b14f3e',
+                        sky: '#3f6f86',
+                    };
+                    document.documentElement.style.setProperty(
+                        '--ochre',
+                        map[name],
+                    );
+                }
+                function setPaper(name) {
+                    const map = {
+                        cream: ['#efe5cd', '#e7dcc0', '#ddd0b0'],
+                        warm: ['#f0e0c2', '#e6d2ad', '#d8c198'],
+                        cool: ['#e8e3d2', '#dad4be', '#c9c1a6'],
+                    };
+                    const [a, b, c] = map[name];
+                    document.documentElement.style.setProperty('--paper', a);
+                    document.documentElement.style.setProperty('--paper-2', b);
+                    document.documentElement.style.setProperty('--paper-3', c);
+                    document.body.style.background = a;
+                    document.body.style.backgroundImage =
+                        "url('assets/texture-bg.png')";
+                }
+
+                parallaxToggle.addEventListener('change', (e) =>
+                    window.__miotomoParallax.set(e.target.checked),
+                );
+                accentSel.addEventListener('change', (e) =>
+                    setAccent(e.target.value),
+                );
+                paperSel.addEventListener('change', (e) =>
+                    setPaper(e.target.value),
+                );
+
+                function open() {
+                    panel.style.display = 'block';
+                }
+                function close() {
+                    panel.style.display = 'none';
+                    window.parent.postMessage(
+                        { type: '__edit_mode_dismissed' },
+                        '*',
+                    );
+                }
+                closeBtn.addEventListener('click', close);
+
+                window.addEventListener('message', (e) => {
+                    if (!e.data) return;
+                    if (e.data.type === '__activate_edit_mode') open();
+                    else if (e.data.type === '__deactivate_edit_mode') close();
+                });
+                window.parent.postMessage(
+                    { type: '__edit_mode_available' },
+                    '*',
+                );
+            })();
+        </script>
+    </body>
+</html>

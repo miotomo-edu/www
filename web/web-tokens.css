@@ -1,0 +1,126 @@
+/* ============================================================
+   MIOTOMO — WEB / MARKETING DESIGN SYSTEM
+   Tokens for the Miotomo marketing site (the landing page).
+   A cinematic, deep-purple "night sky" world with a warm cream
+   ink, a hand-illustrated alien (Tomo), a serif display voice
+   (Fraunces) and ochre / coral storybook accents.
+   ------------------------------------------------------------
+   This is a DIFFERENT surface world from the in-app system
+   (colors_and_type.css): the website is dark, serif and
+   cinematic; the app is cream, bold-sans and tactile.
+   ------------------------------------------------------------
+   Load order in an HTML file:
+     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="web-tokens.css">
+============================================================ */
+
+:root {
+    /* ---------- Surfaces · the night sky ---------- */
+    --paper:    #2a2440;   /* base deep indigo / purple night sky        */
+    --paper-2:  #322a4a;   /* lifted surface — forms, scene cards        */
+    --paper-3:  #3d3458;   /* highest surface — insets, parents art      */
+    --navy:     #3a3551;   /* video frame / cinematic panels             */
+
+    /* The CTA inverts: the warm cream becomes the surface, ink goes dark */
+    --paper-inverse: #f0e6cf;   /* cream "daylight" surface (final CTA)  */
+    --ink-inverse:   #2a2620;   /* near-black text on the cream surface  */
+
+    /* ---------- Ink · warm cream text ---------- */
+    --ink:      #f0e6cf;   /* primary text on the night sky              */
+    --ink-soft: #d8ccb0;   /* body / secondary                           */
+    --ink-mute: #9d93a8;   /* meta, captions, placeholders, eyebrows     */
+
+    /* ---------- Accents · storybook ---------- */
+    --green:      #8fa05c;   /* Tomo & the brand dot — the "alive" hue   */
+    --green-deep: #6e7d42;   /* italic emphasis on dark                  */
+    --ochre:      #d9a83c;   /* PRIMARY action — buttons, pills, play    */
+    --coral:      #d9836a;   /* warm highlight, bullets, accents         */
+    --rose:       #d8847b;   /* soft warm tint                           */
+    --terracotta: #b14f3e;   /* deep warm emphasis (italic on cream)     */
+    --leaf:       #6f7d3e;   /* deep green variant                       */
+    --sky:        #3f6f86;   /* cool accent                              */
+
+    /* ---------- Hairlines (derive from ink over the surface) ---------- */
+    --line:        color-mix(in oklab, var(--ink) 12%, transparent);
+    --line-strong: color-mix(in oklab, var(--ink) 20%, transparent);
+    --line-soft:   color-mix(in oklab, var(--ink) 14%, transparent);
+
+    /* ---------- Radii ---------- */
+    --radius:      14px;   /* skill cards, fields                        */
+    --radius-lg:   22px;   /* scene cards, art frames, video             */
+    --radius-pill: 999px;  /* buttons, nav cta, form, tags               */
+
+    /* ---------- Elevation ---------- */
+    --shadow-soft:
+        0 1px 0 rgba(42, 38, 32, 0.04),
+        0 18px 40px -22px rgba(42, 38, 32, 0.35);
+    --shadow-pop:
+        0 24px 60px -24px rgba(10, 8, 20, 0.55);
+    /* Layered text shadow used to float copy over full-bleed art */
+    --text-float:
+        0 1px 1px rgba(10, 7, 20, 0.95),
+        0 2px 6px rgba(10, 7, 20, 0.80),
+        0 0 18px rgba(10, 7, 20, 0.62);
+
+    /* ---------- Spacing (4px base ramp) ---------- */
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 12px;
+    --s-4: 16px;
+    --s-5: 20px;
+    --s-6: 24px;
+    --s-8: 32px;
+    --s-10: 40px;
+    --s-12: 48px;
+    --s-16: 64px;
+    --s-20: 80px;
+    --s-28: 112px;   /* section rhythm: ~140px desktop, less on mobile  */
+
+    /* Section vertical rhythm (responsive) */
+    --section-y: clamp(64px, 12vh, 140px);
+    /* Page gutter */
+    --wrap: min(1240px, 92vw);
+
+    /* ---------- Type families ---------- */
+    --font-display: "Fraunces", "Newsreader", Georgia, serif;          /* serif display — the site's voice */
+    --font-body:    "Nunito Sans", "DM Sans", system-ui, sans-serif;   /* readable body                    */
+    --font-mono:    "JetBrains Mono", ui-monospace, monospace;         /* eyebrows, tags, meta, ticker     */
+    --font-brand:   "Satoshi", "Nunito Sans", system-ui, sans-serif;   /* wordmark "MioTomo" only          */
+
+    /* ---------- Type scale (display is fluid clamp) ---------- */
+    --t-h1: clamp(48px, 7.2vw, 116px);
+    --t-h2: clamp(36px, 4.6vw, 76px);
+    --t-h3: clamp(22px, 1.9vw, 30px);
+    --t-lede: clamp(18px, 1.45vw, 22px);
+    --t-body: 17px;
+    --t-meta: 13px;
+    --t-eyebrow: 12px;
+
+    /* ---------- Motion ---------- */
+    --ease:        cubic-bezier(0.2, 0.7, 0.2, 1);
+    --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --dur:         200ms;
+    --dur-reveal:  900ms;
+
+    /* ============================================================
+       SEMANTIC ALIASES — prefer these in product/consumer code
+    ============================================================ */
+    --surface:        var(--paper);
+    --surface-raised: var(--paper-2);
+    --surface-high:   var(--paper-3);
+    --surface-cream:  var(--paper-inverse);   /* inverted "daylight" CTA */
+
+    --text:        var(--ink);
+    --text-muted:  var(--ink-soft);
+    --text-faint:  var(--ink-mute);
+    --text-on-cream: var(--ink-inverse);
+
+    --accent-primary: var(--ochre);   /* the one action color           */
+    --accent-warm:    var(--coral);   /* highlights, bullets            */
+    --accent-brand:   var(--green);   /* Tomo, brand dot               */
+    --accent-deep:    var(--terracotta);
+
+    --border:        var(--line);
+    --border-strong: var(--line-strong);
+}

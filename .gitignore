@@ -1,0 +1,45 @@
+# Dependencies / build
+node_modules/
+dist/
+.vite/
+
+# Env — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Design source files not used by the landing page
+Miotomo App.html
+SKILL.md
+atoms.jsx
+colors_and_type.css
+components.css
+screens-a.jsx
+screens-b.jsx
+screens-home-v2.jsx
+screens-progress-v2.jsx
+screens-spell.jsx
+screens-tomo.jsx
+screens-vocab.jsx
+
+# Asset folders not referenced by index.html
+assets2/
+preview/
+scraps/
+ui_kits/
+uploads/
+
+# Unused images in /assets (not referenced in index.html or landing.css)
+assets/cover-friend.png
+assets/scene-rome.png
+assets/friendship.png
+assets/tomo-celebrate.png
+assets/tomo-flying.png
+assets/tomo-head.png
+assets/tomo-question.png
+assets/tomo-sit.png
+assets/tomo-tablet.png
+
+# Misc
+.thumbnail
+.DS_Store

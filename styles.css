@@ -1,0 +1,20 @@
+/* ============================================================
+   MIOTOMO — WEB DESIGN SYSTEM  Entry point
+   Link this file to get the marketing/web tokens and
+   reusable web components (night-sky surfaces, Fraunces
+   display, ochre/coral accents).
+
+   For the APP design system, link colors_and_type.css +
+   components.css directly instead — the two token sets share
+   variable names with different values and must not be mixed.
+
+   Load order:
+     <link href="https://api.fontshare.com/...satoshi..." rel="stylesheet">
+     <link href="https://fonts.googleapis.com/...Fraunces+Nunito+JetBrains..." rel="stylesheet">
+     <link rel="stylesheet" href="styles.css">
+     <!-- landing page only: -->
+     <link rel="stylesheet" href="landing.css">
+============================================================ */
+
+@import url("web/web-tokens.css");
+@import url("web/web-components.css");
