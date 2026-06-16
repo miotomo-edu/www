@@ -550,7 +550,7 @@
                     </button>
                 </form>
                 <div class="cta-micro reveal delay-3">
-                    No spam. No share. No newsletter. One email.
+                    No worries, we won't send you any spam.
                 </div>
                 <div class="cta-success" id="cta-success">
                     ✓ You're in. We'll be in touch.
@@ -564,11 +564,7 @@
         <footer class="footer">
             <div class="wrap footer-inner">
                 <div class="left">
-                    <span
-                        class="brand-dot"
-                        aria-hidden="true"
-                        style="width: 18px; height: 18px"
-                    ></span>
+                    <span class="brand-dot" aria-hidden="true"></span>
                     <span
                         style="
                             font-family: 'Satoshi', 'Nunito Sans', sans-serif;
@@ -593,181 +589,6 @@
             </div>
         </footer>
 
-        <!-- Tweaks panel (vanilla, very small) -->
-        <div
-            id="tweaks-panel"
-            style="
-                display: none;
-                position: fixed;
-                right: 18px;
-                bottom: 18px;
-                z-index: 100;
-                background: var(--paper);
-                color: var(--ink);
-                border: 1px solid
-                    color-mix(in oklab, var(--ink) 20%, transparent);
-                border-radius: 16px;
-                padding: 18px;
-                width: 260px;
-                box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.3);
-                font-family: var(--font-body);
-                font-size: 14px;
-            "
-        >
-            <div
-                style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 12px;
-                "
-            >
-                <strong
-                    style="
-                        font-family: var(--font-display);
-                        font-size: 17px;
-                        font-weight: 500;
-                    "
-                    >Tweaks</strong
-                >
-                <button
-                    id="tweaks-close"
-                    style="
-                        background: none;
-                        border: none;
-                        cursor: pointer;
-                        font-size: 18px;
-                        color: var(--ink-mute);
-                    "
-                >
-                    ×
-                </button>
-            </div>
-            <label
-                style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 8px 0;
-                "
-            >
-                Parallax
-                <input id="tw-parallax" type="checkbox" checked />
-            </label>
-            <label style="display: block; padding: 8px 0">
-                Accent
-                <select
-                    id="tw-accent"
-                    style="
-                        display: block;
-                        margin-top: 6px;
-                        width: 100%;
-                        padding: 8px;
-                        border-radius: 8px;
-                        border: 1px solid
-                            color-mix(in oklab, var(--ink) 20%, transparent);
-                        background: var(--paper-2);
-                        font: inherit;
-                    "
-                >
-                    <option value="ochre">Ochre (default)</option>
-                    <option value="coral">Coral</option>
-                    <option value="terracotta">Terracotta</option>
-                    <option value="sky">Sky blue</option>
-                </select>
-            </label>
-            <label style="display: block; padding: 8px 0">
-                Paper tone
-                <select
-                    id="tw-paper"
-                    style="
-                        display: block;
-                        margin-top: 6px;
-                        width: 100%;
-                        padding: 8px;
-                        border-radius: 8px;
-                        border: 1px solid
-                            color-mix(in oklab, var(--ink) 20%, transparent);
-                        background: var(--paper-2);
-                        font: inherit;
-                    "
-                >
-                    <option value="cream">Cream (default)</option>
-                    <option value="warm">Warm sand</option>
-                    <option value="cool">Cool stone</option>
-                </select>
-            </label>
-        </div>
-
         <script type="module" src="script.js"></script>
-        <script>
-            /* Tweaks panel wiring (vanilla, no React needed) */
-            (function () {
-                const panel = document.getElementById('tweaks-panel');
-                const closeBtn = document.getElementById('tweaks-close');
-                const parallaxToggle = document.getElementById('tw-parallax');
-                const accentSel = document.getElementById('tw-accent');
-                const paperSel = document.getElementById('tw-paper');
-
-                function setAccent(name) {
-                    const map = {
-                        ochre: '#d9a83c',
-                        coral: '#d9836a',
-                        terracotta: '#b14f3e',
-                        sky: '#3f6f86',
-                    };
-                    document.documentElement.style.setProperty(
-                        '--ochre',
-                        map[name],
-                    );
-                }
-                function setPaper(name) {
-                    const map = {
-                        cream: ['#efe5cd', '#e7dcc0', '#ddd0b0'],
-                        warm: ['#f0e0c2', '#e6d2ad', '#d8c198'],
-                        cool: ['#e8e3d2', '#dad4be', '#c9c1a6'],
-                    };
-                    const [a, b, c] = map[name];
-                    document.documentElement.style.setProperty('--paper', a);
-                    document.documentElement.style.setProperty('--paper-2', b);
-                    document.documentElement.style.setProperty('--paper-3', c);
-                    document.body.style.background = a;
-                    document.body.style.backgroundImage =
-                        "url('assets/texture-bg.png')";
-                }
-
-                parallaxToggle.addEventListener('change', (e) =>
-                    window.__miotomoParallax.set(e.target.checked),
-                );
-                accentSel.addEventListener('change', (e) =>
-                    setAccent(e.target.value),
-                );
-                paperSel.addEventListener('change', (e) =>
-                    setPaper(e.target.value),
-                );
-
-                function open() {
-                    panel.style.display = 'block';
-                }
-                function close() {
-                    panel.style.display = 'none';
-                    window.parent.postMessage(
-                        { type: '__edit_mode_dismissed' },
-                        '*',
-                    );
-                }
-                closeBtn.addEventListener('click', close);
-
-                window.addEventListener('message', (e) => {
-                    if (!e.data) return;
-                    if (e.data.type === '__activate_edit_mode') open();
-                    else if (e.data.type === '__deactivate_edit_mode') close();
-                });
-                window.parent.postMessage(
-                    { type: '__edit_mode_available' },
-                    '*',
-                );
-            })();
-        </script>
     </body>
 </html>
