@@ -19,7 +19,6 @@ body {
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body {
@@ -185,7 +184,6 @@ section {
     height: 100svh;
     padding: clamp(88px, 12vh, 140px) 0 4px;
     overflow: hidden;
-    /* clip Tomo animation so it never creates horizontal scroll */
     contain: paint;
 }
 .hero-bg {
@@ -429,7 +427,7 @@ section {
 .manifesto-body p { font-size: 20px; color: var(--ink-soft); }
 
 /* ------- Scroll-story (Tomo travels) ------- */
-.story { padding: 80px 0 160px; }
+.story { padding: 16px 0 160px; }
 .story-intro {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
@@ -764,5 +762,6 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) and (min-width: 961px) {
+    /* JS handles the final position via renderTomo(1); this is a no-JS fallback */
     .hero-tomo { opacity: 1; transform: translate3d(18vw, -2vh, 0) scale(1) rotate(0deg); }
 }

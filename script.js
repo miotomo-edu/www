@@ -25,7 +25,7 @@ async function submitToWaitlist(email, source) {
   window.addEventListener("scroll", onScrollNav, { passive: true });
   onScrollNav();
 
-  /* Hero Tomo scrolly animation */
+  /* Hero Tomo — scroll-driven scrolly-telly animation */
   const hero = document.querySelector(".hero");
   const heroTomo = document.querySelector(".hero-tomo");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -34,9 +34,8 @@ async function submitToWaitlist(email, source) {
   const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
   const lerp = (a, b, t) => a + (b - a) * t;
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-  const easeInOutCubic = (t) => t < 0.5
-    ? 4 * t * t * t
-    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  const easeInOutCubic = (t) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
   function setHeroTomo() {
     heroRaf = null;
@@ -45,15 +44,13 @@ async function submitToWaitlist(email, source) {
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
-    // At ≤960px the hero pin becomes position:static and CSS already sets
-    // opacity:1 / scale(1). Clear any inline styles so CSS wins.
+    // ≤960px: CSS handles positioning (Tomo top-right, form at bottom),
+    // clear any inline overrides left from a wider viewport
     if (vw <= 960) {
       heroTomo.style.opacity = "";
       heroTomo.style.transform = "";
       return;
     }
-
-    const pinDistance = Math.max(1, (hero.offsetHeight || vh) - vh);
 
     if (prefersReducedMotion.matches) {
       heroTomo.style.opacity = "1";
@@ -61,22 +58,20 @@ async function submitToWaitlist(email, source) {
       return;
     }
 
+    const pinDistance = Math.max(1, (hero.offsetHeight || vh) - vh);
     const heroTop = hero.offsetTop;
     const heroScroll = clamp(window.scrollY - heroTop, 0, pinDistance);
     const progress = heroScroll / pinDistance;
-    const grow = easeOutCubic(progress);
+
+    const grow  = easeOutCubic(progress);
     const drift = easeInOutCubic(progress);
-    const mobile = vw < 760;
+    const scale   = lerp(0.18, 1,           grow);
+    const x       = lerp(-vw * 0.08, vw * 0.22, drift);
+    const y       = lerp(vh  * 0.08, vh * -0.02, grow);
+    const rotate  = lerp(-3, 3,               drift);
+    const opacity = lerp(0, 1, clamp(progress / 0.18));
 
-    const scale = lerp(0.18, 1, grow);
-    const startX = mobile ? -vw * 0.03 : -vw * 0.08;
-    const finalX = mobile ? vw * 0.34 : vw * 0.22;
-    const x = lerp(startX, finalX, drift);
-    const y = lerp(vh * 0.08, vh * -0.02, grow);
-    const rotate = lerp(-3, 3, drift);
-    const opacity = lerp(0, mobile ? 0.72 : 1, clamp(progress / 0.18));
-
-    heroTomo.style.opacity = opacity.toFixed(3);
+    heroTomo.style.opacity   = opacity.toFixed(3);
     heroTomo.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) scale(${scale.toFixed(3)}) rotate(${rotate.toFixed(2)}deg)`;
   }
 
@@ -86,7 +81,7 @@ async function submitToWaitlist(email, source) {
   }
 
   window.addEventListener("scroll", scheduleHeroTomo, { passive: true });
-  window.addEventListener("resize", scheduleHeroTomo);
+  window.addEventListener("resize", scheduleHeroTomo, { passive: true });
   prefersReducedMotion.addEventListener("change", scheduleHeroTomo);
   setHeroTomo();
 
